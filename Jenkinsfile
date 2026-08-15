@@ -5,6 +5,12 @@ pipeline {
         choice(name: 'ENVIRONMENT', choices: ['dev', 'staging', 'prod'], description: 'Target environment')
     }
 
+    
+    options {
+        ansiColor('xterm')
+    }
+
+    
     environment {
         TF_DIR = "environments/${params.ENVIRONMENT}"
     }
